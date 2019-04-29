@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<script>
+  
+  $(document).ready(function() {
+  
+			
+		var dataid = getParams(window.location.href);	
+		
+		var getid = dataid.id;
+		var url = "http://localhost/betanew/mobile/ProjectList/id/||"+getid;
+        $.getJSON(url, function(result) {
+            console.log(result);
+			alert(result);
+            /* $.each(result, function(i, field) {
+                var id = field.id;
+                var title = field.title;
+                var duration = field.duration;
+                var price = field.price;
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>$" + price + "</span><h2>" + title + " </h2><p>" + duration + "</p></a>");
+            });
+
+*/			
+        });
+    });
+
+
+
+	var getParams = function (url) {
+	var params = {};
+	var parser = document.createElement('a');
+	parser.href = url;
+	var query = parser.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		params[pair[0]] = decodeURIComponent(pair[1]);
+	}
+	return params;
+};
+	
+
+
+
+</script>
+
+
+<body>
+<div class="container">
+    <div class="row">
+    	<nav class="navbar navbar-default navbar-fixed-top buildoCustomHeader">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="navbar-header">
+						<div class="col-xs-2">
+						  	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						    	<span class="sr-only">Toggle navigation</span>
+						    	<span class="icon-bar"></span>
+						    	<span class="icon-bar"></span>
+						    	<span class="icon-bar"></span>
+						  	</button>
+						</div>
+						<div class="col-xs-6 text-center brandLogo">
+					  		<a class="navbar-brand" href="#">Buildo Site App</a>
+					  	</div>
+					  	<div class="col-xs-4">
+						  	<div class="notificationBlock pull-right">
+						    	<ul>
+						    		<li><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+						    	</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse sideNav">
+				    <div class="userProfile">
+				    	<div class="row">
+							<div class="col-xs-12 text-center">
+								<a href="#">
+									<img id="userPic" src="images/img_avatar.png" class="avatar" alt="Usre Pic">
+								</a>
+								<div class="">Hello Ram</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<form class="search-form" onkeypress="return event.keyCode != 13;" role="search" method="GET" autocomplete="off">
+							<div>
+						  		<input type="text" class="form-control" name="serach" placeholder="Search" id="search">
+							</div>
+							<div class="dropdown-wrapper"></div>
+						</form>
+					</div>
+					<ul class="nav navbar-nav">
+					    <li class="active"><a href="#">Home</a></li>
+					    <li><a href="#">About</a></li>
+					    <li><a href="#">Contact</a></li>
+					    <li class="dropdown">
+					    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					      	<ul class="dropdown-menu">
+						        <li><a href="#">Action</a></li>
+						        <li><a href="#">Another action</a></li>
+						        <li><a href="#">Something else here</a></li>
+						        <li role="separator" class="divider"></li>
+						        <li class="dropdown-header">Nav header</li>
+						        <li><a href="#">Separated link</a></li>
+						        <li><a href="#">One more separated link</a></li>
+					      	</ul>
+					    </li>
+				  	</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+    </div>
+    <div id="spacer"></div>
+    <div class="bodyContainer">
+    	<div class="">Some content</div>
+	    <div class="dashboardListItem">
+	    	<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-3">
+						<a href="attandance.html">
+						  	<div class="thumbnail">
+						  		<div class="thumbData attandance">
+							    	<i class="fa fa-list-alt"></i>
+							      	<div class="caption">
+							        	<h4>Attandance</h4>
+							    	</div>
+							    </div>
+						  	</div>
+						</a>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+						<a href="inventory.html">
+						  	<div class="thumbnail">
+						    	<div class="thumbData inventory">
+							    	<i class="fa fa-cart-plus"></i>
+							      	<div class="caption">
+							        	<h4>Inventory</h4>
+							    	</div>
+							    </div>
+						  	</div>
+						</a>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData issueItem">
+						    	<i class="fa fa-shopping-cart"></i>
+						      	<div class="caption">
+						        	<h4>Issue Item</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData requestForm">
+						    	<i class="fa fa-wpforms"></i>
+						      	<div class="caption">
+						        	<h4>Request Form</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData workProgress">
+						    	<i class="fa fa-line-chart"></i>
+						      	<div class="caption">
+						        	<h4>Work Progress</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData purchaseOrders">
+						    	<i class="fa fa-shopping-basket"></i>
+						      	<div class="caption">
+						        	<h4>Purchase Orders</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData requestItem">
+						    	<i class="fa fa-plus"></i>
+						      	<div class="caption">
+						        	<h4>Request Item</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData purchasePayments">
+						    	<i class="fa fa-shopping-basket"></i>
+						      	<div class="caption">
+						        	<h4>Purchase &amp; Payments</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData manageLabour">
+						    	<i class="fa fa-user"></i>
+						      	<div class="caption">
+						        	<h4>Manage Labour</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData labourReport">
+						    	<i class="fa fa-user-circle"></i>
+						      	<div class="caption">
+						        	<h4>Labour Report</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData workPlanning">
+						    	<i class="fa fa-line-chart"></i>
+						      	<div class="caption">
+						        	<h4>Work Planning</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-3">
+					  	<div class="thumbnail">
+					    	<div class="thumbData assetJobSheet">
+						    	<i class="fa fa-shopping-basket"></i>
+						      	<div class="caption">
+						        	<h4>Asset Job Sheet</h4>
+						    	</div>
+						    </div>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

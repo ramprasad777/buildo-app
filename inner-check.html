@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+    	<nav class="navbar navbar-default navbar-fixed-top buildoCustomHeader">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="navbar-header">
+						<div class="col-xs-2">
+						  	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						    	<span class="sr-only">Toggle navigation</span>
+						    	<span class="icon-bar"></span>
+						    	<span class="icon-bar"></span>
+						    	<span class="icon-bar"></span>
+						  	</button>
+						</div>
+						<div class="col-xs-6 text-center brandLogo">
+					  		<a class="navbar-brand" href="#">Buildo Site App</a>
+					  	</div>
+					  	<div class="col-xs-4">
+						  	<div class="notificationBlock pull-right">
+						    	<ul>
+						    		<li><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
+						    	</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse sideNav">
+				    <div class="userProfile">
+				    	<div class="row">
+							<div class="col-xs-12 text-center">
+								<a href="#">
+									<img id="userPic" src="images/img_avatar.png" class="avatar" alt="Usre Pic">
+								</a>
+								<div class="">Hello Ram</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<form class="search-form" onkeypress="return event.keyCode != 13;" role="search" method="GET" autocomplete="off">
+							<div>
+						  		<input type="text" class="form-control" name="serach" placeholder="Search" id="search">
+							</div>
+							<div class="dropdown-wrapper"></div>
+						</form>
+					</div>
+					<ul class="nav navbar-nav">
+					    <li class="active"><a href="#">Home</a></li>
+					    <li><a href="#">About</a></li>
+					    <li><a href="#">Contact</a></li>
+					    <li class="dropdown">
+					    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					      	<ul class="dropdown-menu">
+						        <li><a href="#">Action</a></li>
+						        <li><a href="#">Another action</a></li>
+						        <li><a href="#">Something else here</a></li>
+						        <li role="separator" class="divider"></li>
+						        <li class="dropdown-header">Nav header</li>
+						        <li><a href="#">Separated link</a></li>
+						        <li><a href="#">One more separated link</a></li>
+					      	</ul>
+					    </li>
+				  	</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+    </div>
+    <div id="spacer"></div>
+    <div class="bodyContainer">
+    	<div class="buttons">
+    		<div class="row">
+	    		<div class="col-xs-6 col-sm-6">
+					<span class="text-left">Start Date</span>
+					<div id="datepicker" class="input-group date datepicker" data-date-format="mm-dd-yyyy">
+					    <input class="form-control" type="text" readonly />
+					    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<span class="text-left">End Date</span>
+					<div id="datepicker" class="input-group date datepicker" data-date-format="mm-dd-yyyy">
+					    <input class="form-control" type="text" readonly />
+					    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<button class="btn btn-primary submitBtn">Submit</button>
+				</div>
+			</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-xs-12 text-center">
+    			12/04/2019
+    		</div>
+    	</div>
+    	<div class="tab-content">
+		    <div class="innerPageDataTable">
+		    	<table class="table">
+					<thead>
+						<tr>
+							<th>Employee Name</th>
+						  	<th>Work Hour</th>
+						  	<th>OT</th>
+						  	<th>Amount Due</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						  	<th scope="row">
+						  		Mark
+						  		<small class="text-light">Labour</small>
+						  	</th>
+						  	<td>128</td>
+						  	<td>
+						  		<div class="checkbox checkbox-primary">
+			                        <input id="1" type="checkbox" checked="">
+			                        <label for="1"></label>
+			                    </div>
+						  	</td>
+						  	<td>
+						  		<div class="checkbox checkbox-primary">
+			                        <input id="2" type="checkbox">
+			                        <label for="2"></label>
+			                    </div>
+						  	</td>
+						</tr>
+						<tr>
+						  	<th scope="row">Jacob</th>
+						  	<td>Mistry</td>
+						  	<td>
+						  		<div class="checkbox checkbox-primary">
+			                        <input id="3" type="checkbox">
+			                        <label for="3"></label>
+			                    </div>
+						  	</td>
+						  	<td>
+						  		<div class="checkbox checkbox-primary">
+			                        <input id="4" type="checkbox" checked="">
+			                        <label for="4"></label>
+			                    </div>
+						  	</td>
+						</tr>
+						<tr>
+						  	<th scope="row">Larry</th>
+						  	<td>Kuli</td>
+						  	<td>
+						  		<div class="checkbox checkbox-primary">
+			                        <input id="5" type="checkbox">
+			                        <label for="5"></label>
+			                    </div>
+						  	</td>
+						  	<td>
+						  		<div class="checkbox checkbox-primary">
+			                        <input id="6" type="checkbox">
+			                        <label for="6"></label>
+			                    </div>
+						  	</td>
+						</tr>
+					</tbody>
+				</table>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>

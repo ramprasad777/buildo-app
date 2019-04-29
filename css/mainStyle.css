@@ -1,0 +1,204 @@
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem; }
+
+body {
+  background: #fff;}
+
+.navbar-toggle{
+	float:left;
+	margin-left:15px;
+}
+.navbar-brand{
+	float:right;
+}
+.buildoCustomHeader .navbar-header{
+	background: #2c4d84;
+}
+.buildoCustomHeader .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.buildoCustomHeader .navbar-toggle{
+    border: none;
+}
+.buildoCustomHeader .navbar-toggle:focus, .buildoCustomHeader .navbar-toggle:hover {
+    background: none;
+}
+.buildoCustomHeader [class^="col-"]{
+	padding:0;
+}
+.buildoCustomHeader .brandLogo a{
+	color:#fff;
+}
+
+/*Start Notification Style*/
+.notificationBlock ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.notificationBlock ul li{
+	display: inline-block;
+	padding:15px;
+	font-size:18px;
+}
+.notificationBlock ul li a{
+	color:#fff;
+}
+/*Side Navigation*/
+.sideNav .search-form {
+    border: 1px solid rgba(153,153,153,.3);
+}
+.search-form {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.search-form input {
+    color: #424242!important;
+    border: none;
+    font-weight: 300;
+    padding-left: 1.88rem;
+    height:40px;
+    box-shadow: none;
+    background: none
+}
+.userProfile{
+	padding:20px 0 0;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*Start Body container*/
+.bodyContainer{
+	padding:20px 0 40px;
+}
+.bodyContainer .dashboardListItem .thumbnail{
+  text-align: center;
+  position: relative;
+  min-height: 150px;
+}
+.bodyContainer .dashboardListItem .thumbnail .thumbData{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:100%;
+}
+.bodyContainer .dashboardListItem .thumbnail .caption h4{
+  font-size:16px;
+}
+.bodyContainer .dashboardListItem .thumbnail i{
+  font-family:'FontAwesome';
+  font-size:25px;
+  border:2px solid red;
+  padding:15px;
+  border-radius:50%;
+  width: 60px;
+  height:60px;
+}
+.bodyContainer .dashboardListItem .thumbnail .attandance i{
+  border:2px solid #008000;
+  color:#008000;
+}
+.bodyContainer .dashboardListItem .thumbnail .inventory i{
+  border:2px solid #07aae8;
+  color:#07aae8;
+}
+.bodyContainer .dashboardListItem .thumbnail .issueItem i{
+  border:2px solid #acacac;
+  color:#acacac;
+}
+.bodyContainer .dashboardListItem .thumbnail .requestForm i{
+  border:2px solid #ef133f;
+  color:#ef133f;
+}
+.bodyContainer .dashboardListItem .thumbnail .workProgress i{
+  border:2px solid #f5991e;
+  color:#f5991e;
+}
+.bodyContainer .dashboardListItem .thumbnail .purchaseOrders i{
+  border:2px solid #acacac;
+  color:#acacac;
+}
+.bodyContainer .dashboardListItem .thumbnail .requestItem i{
+  border:2px solid #347fff;
+  color:#347fff;
+}
+.bodyContainer .dashboardListItem .thumbnail .purchasePayments i{
+  border:2px solid #229208;
+  color:#229208;
+}
+.bodyContainer .dashboardListItem .thumbnail .manageLabour i{
+  border:2px solid #f0153f;
+  color:#f0153f;
+}
+.bodyContainer .dashboardListItem .thumbnail .labourReport i{
+  border:2px solid #428aff;
+  color:#428aff;
+}
+.bodyContainer .dashboardListItem .thumbnail .workPlanning i{
+  border:2px solid #28940d;
+  color:#28940d;
+}
+.bodyContainer .dashboardListItem .thumbnail .assetJobSheet i{
+  border:2px solid #f39b1d;
+  color:#f39b1d;
+}
+/*Start inner pages*/
+label{margin-left: 20px;}
+#datepicker{width:100%; margin: 0 0 20px;}
+#datepicker > span:hover{cursor: pointer;}
+
+.nav-tabs{
+  border:none;
+}
+.buttons{
+  margin:0 auto 10px;
+}
+.buttons ul li{
+  float:inherit;
+  display: inline-block;
+}
+.buttons ul li a{
+  background: transparent;
+  color:#000;
+  border:1px solid #ccc;
+}
+.buttons ul li.active a, .buttons ul li.active a:hover, .buttons ul li.active a:focus{
+  background: #428bca;
+  color:#fff;
+}
+.innerPageDataTable th, .innerPageDataTable td{
+  font-size: 14px;
+}
+.innerPageDataTable th small, .innerPageDataTable td small{
+  display: block;
+  font-size: 11px;
+  color:#848383;
+}
+.submitBtn{
+  width:100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+/*Start Footer*/
+.footer{
+  width:100%;
+  position: fixed;
+  bottom:0;
+  left:0;
+}
+.footer a{
+  width:50%;
+  height:auto;
+  float: left;
+  margin:0;
+  border-radius: 0;
+  padding:10px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+</head>
+<body>
+
+<div class="container" id="loginPanel">
+    <div class="row">
+    	<div class="">
+      		<div class="loginFormBlock col-xs-12 col-sm-8">
+        		<div class="card card-signin">
+			          <div class="card-body">
+			            <!-- Icon -->
+					    <div class="logoBlock text-center">
+					      <img src="images/logo-large.jpg" id="logo" alt="Buildo" />
+					    </div>
+			            <form class="form-signin" method="post" id="loginForm" action="#">
+			            	<div class="form-label-group">
+			                	<input type="text" name="text" id="mobile" class="form-control" placeholder="Mobile no" required autofocus>
+			              	</div>
+			              	<div class="form-label-group">
+			                	<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+			              	</div>
+			              	<div class="custom-control custom-checkbox mb-3">
+			                	<input type="checkbox" class="custom-control-input" id="customCheck1">
+			                	<label class="custom-control-label" for="customCheck1">Remember password</label>
+			              	</div>
+			              	<!-- <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button> -->
+			              	<input type="button" name="login" id="login" class="btn btn-lg btn-primary btn-block text-uppercase" value="Sign In">
+			              	<hr class="my-4">
+			              	<div class="text-center">
+			              		<a href="#">Unable to Login?</a>
+			              		<a href="#">New User Registration?</a>
+			              	</div>
+			            </form>
+			          </div>
+        		</div>
+        	</div>
+      	</div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+ 
+		$(document).ready(function(){
+          $("#login").click(function() {
+            var mobile = $("#mobile").val();
+            var password = $("#password").val();
+            var dataString = "mobile_no=" + mobile + "&password=" + password;
+            
+			if ($.trim(mobile).length > 0 & $.trim(password).length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://192.168.1.5/betanew/mobile/UserLogin",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    beforeSend: function() {
+                        $("#login").val('Connecting...');
+                    },
+                    success: function(data) {
+                        
+						if (data!="Fail") {
+						
+						window.location.href = "http://192.168.1.5/app/dashboard.html?id="+data;
+
+						
+                           /* 							
+								$("#loginPanel").hide();
+								$("#dashboardPannel").show();
+								$("#loginId").val(data);
+							*/
+                        
+						} else{
+						   $('input[type="text"]').css({"border":"2px solid red","box-shadow":"0 0 3px red"});
+							$('input[type="password"]').css({"border":"2px solid red ","box-shadow":"0 0 3px red"});
+                        }
+                    }
+                });
+            }else{
+			
+						$('input[type="text"]').css({"border":"2px solid red","box-shadow":"0 0 3px red"});
+						$('input[type="password"]').css({"border":"2px solid red ","box-shadow":"0 0 3px red"});
+
+			}
+			
+			
+             return false;
+			 
+        });
+    });
+</script>
+</body>
+</html>
